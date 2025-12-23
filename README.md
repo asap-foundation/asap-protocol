@@ -144,7 +144,12 @@ ASAP — AI Site Agent Protocol. Version 0.1 Draft. canonical reference: github.
 
 
 ---
+## Authorship
 
+The ASAP protocol concept and canonical specification
+were proposed and authored by **Shahram Nematzadeh**.
+
+---
 ## License
 
 This specification is published for public reference. Implementations are permitted.  
