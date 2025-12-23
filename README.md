@@ -27,6 +27,9 @@ These approaches cannot guarantee correctness or authority. Websites currently h
 
 ASAP solves this problem by creating a **machine-verifiable layer of trust**.
 
+ASAP does not attempt to judge truth or correctness.
+It only verifies origin and authority.
+
 ---
 
 ## Core Components
@@ -47,14 +50,17 @@ A trust directory that:
 ---
 
 ## High-Level Flow
+
 AI Platform
 ↓ (lookup public key)
+
 Registry
 ↓ (intent request)
+
 Site Agent
 ↓ (signed response)
-AI Platform verifies signature → uses response
 
+AI Platform verifies signature → uses response
 
 ---
 
@@ -63,7 +69,7 @@ AI Platform verifies signature → uses response
 - Authority over truth — website defines official data
 - Intent-driven communication — AI specifies **what**, not **how**
 - Verification over inference — cryptographically signed responses
-- Decentralized data, centralized trust — registry publishes metadata only
+- Decentralized data, minimal trust anchor — registry publishes metadata only
 - AI as verifier, not judge — no assumption beyond signature verification
 
 ---
