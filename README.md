@@ -135,7 +135,8 @@ AI Platform → verifies signature → uses response
 - Trust boundaries
 - Flow diagrams
 - Deployment and failure models
-
+- 
+📌 This repository is the **official and canonical reference** for the ASAP protocol. 
 ### 👥 [Governance](./GOVERNANCE.md)
 - Canonical reference rules
 - Registry governance
