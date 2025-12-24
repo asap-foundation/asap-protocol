@@ -52,13 +52,16 @@ A trust directory that:
 ## High-Level Flow
 
 AI Platform
-↓ (lookup public key)
+↓ 
+(lookup public key)
 
 Registry
-↓ (intent request)
+↓ 
+(intent request)
 
 Site Agent
-↓ (signed response)
+↓ 
+(signed response)
 
 AI Platform verifies signature → uses response
 
