@@ -1,187 +1,194 @@
-# ASAP — AI Site Agent Protocol
+# 🤖 ASAP — AI Site Agent Protocol
 
-**Canonical Reference Repository**  
-Version: 0.1 Draft
-
----
-
-## Overview
-
-ASAP (AI Site Agent Protocol) is a web-native protocol designed to enable websites to provide **official, cryptographically verifiable answers** directly to AI systems.  
-It is **not a product**—it is a protocol specification and canonical reference.
-
-ASAP allows AI systems to distinguish between inferred content and **site-authoritative responses**, reducing hallucinations, outdated information, and liability risk.
+> **Canonical Reference Repository**  
+> **Version:** 0.1 (Draft) | **Status:** Draft / Proposal
 
 ---
 
-## Why ASAP Exists
+## 📋 Overview
 
-Current AI systems often rely on:
-- Crawled content
-- Training snapshots
-- Heuristic inference
+**ASAP (AI Site Agent Protocol)** is a web-native protocol designed to enable websites to provide **official, cryptographically verifiable answers** directly to AI systems.
 
-These approaches cannot guarantee correctness or authority. Websites currently have no standardized way to declare:
+> ⚠️ **It is not a product.**  
+> It is a **protocol specification** and **canonical reference**.
 
-> "This answer is official, current, and originates from us."
-
-ASAP solves this problem by creating a **machine-verifiable layer of trust**.
-
-ASAP does not attempt to judge truth or correctness.
-It only verifies origin and authority.
-
----
-## What ASAP Is
-
-- An **intent-based communication protocol**
-- A **verification layer**, not a data platform
-- A way for websites to answer AI systems directly and authoritatively
-
-ASAP allows AI systems to verify responses instead of guessing them.
+ASAP allows AI systems to distinguish between **inferred content** and **site-authoritative responses**, reducing hallucinations, outdated information, and legal or reputational risk.
 
 ---
 
-## What ASAP Is NOT
+## ❓ Why ASAP Exists
 
-- Not a crawler
-- Not a search engine
-- Not an API replacement
-- Not an AI model
-- Not a centralized data service
+Current AI systems commonly rely on:
 
-ASAP complements existing approaches rather than replacing them.
+- 📊 **Crawled content**
+- 🗂️ **Static training snapshots**
+- 🎯 **Heuristic inference**
 
----
-## Core Components
+> These approaches **cannot guarantee authority or freshness**.
 
-### 1. Site Agent
-A service deployed by the website that:
-- Receives intent-based requests
-- Accesses official site data
-- Generates digitally signed responses
+Websites currently lack a standardized way to declare:
 
-### 2. Registry
-A trust directory that:
-- Publishes site public keys
-- Declares agent URLs and supported intents
-- Enables verification of responses
-- Does **not** proxy data
+> *"This answer is official, current, and originates from us."*
+
+ASAP addresses this gap by introducing a **machine-verifiable layer of trust**.
+
+> **ASAP does not attempt to judge truth or correctness.**  
+> It verifies **origin and authority only**.
 
 ---
 
-## High-Level Flow
+## ✅ What ASAP Is
 
+- 🔄 **Intent-based communication protocol**
+- ✅ **Verification layer, not a data platform**
+- 🏢 **Mechanism for websites to answer AI systems directly and authoritatively**
+
+ASAP enables AI systems to **verify responses** instead of **inferring** them.
+
+---
+
+## ❌ What ASAP Is NOT
+
+- 🚫 Not a crawler
+- 🚫 Not a search engine
+- 🚫 Not an API replacement
+- 🚫 Not an AI model
+- 🚫 Not a centralized data service
+
+> **ASAP complements existing approaches rather than replacing them.**
+
+### 🔄 API vs ASAP Comparison
+![API vs ASAP Difference](./Images/img4.png)
+
+---
+
+## 🏗️ Core Components
+
+### 1. 🔧 Site Agent
+
+A service **deployed and controlled by the website owner** that:
+
+- 📨 **Receives intent-based requests**
+- 🗄️ **Accesses authoritative site data**
+- ✍️ **Generates digitally signed responses**
+
+#### 👤 Site Owner Relationship
+![Site Owner and Protocol Relationship](./Images/img2.png)
+
+### 2. 📚 Registry
+
+A **trust directory** that:
+
+- 🔑 **Publishes site public keys**
+- 📋 **Declares agent URLs and supported intents**
+- ✅ **Enables response verification**
+
+> **Does not proxy data or answer requests**  
+> The registry is a **trust anchor, not a data authority**.
+
+---
+
+## 🔄 High-Level Flow
+
+```
 AI Platform
-↓ 
-(lookup public key)
-
+    ↓ (lookup public key / metadata)
 Registry
-↓ 
-(intent request)
-
+    ↓ (intent request)
 Site Agent
-↓ 
-(signed response)
+    ↓ (signed response)
+AI Platform → verifies signature → uses response
+```
 
-AI Platform verifies signature → uses response
-
----
-
-## Key Principles
-
-- Authority over truth — website defines official data
-- Intent-driven communication — AI specifies **what**, not **how**
-- Verification over inference — cryptographically signed responses
-- Decentralized data, minimal trust anchor — registry publishes metadata only
-- AI as verifier, not judge — no assumption beyond signature verification
+### 📐 Overall Architecture
+![ASAP Overall Architecture](./Images/img1.png)
 
 ---
 
-## Intent Model
+## 🎯 Key Principles
 
-See [INTENTS.md](INTENTS.md) for:
-- Definition of intents
-- Examples (`pricing`, `features`, `availability`, `policy`, `contact`, `status`)
+| Principle | Description |
+|-----------|-------------|
+| **Authority over truth** | Websites define official data |
+| **Intent-driven communication** | AI specifies what, not how |
+| **Verification over inference** | Cryptographically signed responses |
+| **Decentralized data, minimal trust anchor** | Registry publishes metadata only |
+| **AI as verifier, not judge** | No assumptions beyond signature verification |
+
+---
+
+## 📖 Documentation
+
+### 🎯 [Intent Model](./INTENTS.md)
+- Intent definitions
+- Examples (pricing, features, availability, policy, contact, status)
 - Request and response rules
 
----
-
-## Security Model
-
-See [SECURITY.md](SECURITY.md) for:
-- Threats
-- Mitigation
+### 🔒 [Security Model](./SECURITY.md)
+- Threat model
+- Mitigation strategies
 - Trust assumptions
-- Verification rules
+- Verification requirements
 
----
-
-## Architecture
-
-See [ARCHITECTURE.md](ARCHITECTURE.md) for:
+### 🏛️ [Architecture](./ARCHITECTURE.md)
 - Component overview
-- Flow diagram
+- Trust boundaries
+- Flow diagrams
 - Deployment and failure models
-- Cryptography and trust boundaries
 
----
-
-## Governance
-
-See [GOVERNANCE.md](GOVERNANCE.md) for:
+### 👥 [Governance](./GOVERNANCE.md)
 - Canonical reference rules
 - Registry governance
 - Forking and evolution policy
-- Anti-capture clause
+- Anti-capture guarantees
 
----
-
-## Registry API
-
-See [REGISTRY_API.md](REGISTRY_API.md) for:
+### 🔌 [Registry API](./REGISTRY_API.md)
 - Minimal registry endpoints
-- PublicKey lookup
-- Supported intents
-- Response format
+- Public key lookup
+- Supported intent discovery
+- Response formats
 - Security considerations
 
----
-
-## Standardization Roadmap
-
-See [STANDARDIZATION.md](STANDARDIZATION.md) for:
-- RFC / W3C / ISO paths
-- Versioning and adoption strategy
-- Canonical reference and open process
+### 📋 [Standardization Roadmap](./STANDARDIZATION.md)
+- IETF / W3C / ISO pathways
+- Versioning strategy
+- Open standardization process
 
 ---
 
-## Status
+## 📊 Status
 
-- Draft / Proposal  
-- Ready for public feedback and pilot implementations  
-- Repository serves as canonical reference for ASAP v0.1
+| Status | Details |
+|--------|---------|
+| **Current Status** | Draft / Proposal |
+| **Open for** | Public feedback and pilot implementations |
+| **Repository** | Serves as canonical reference for ASAP v0.1 |
+
+---
+
+## 📝 Citation
+
+If implementing or referencing ASAP, please cite:
+
+```text
+ASAP — AI Site Agent Protocol
+Version 0.1 (Draft)
+Canonical reference: github.com/asap-foundation/asap-protocol
+```
 
 ---
 
-## Citation
+## 👤 Authorship
 
-If implementing or referencing ASAP, cite this repository and version:
+The ASAP protocol concept and canonical specification were **proposed and authored by**:
 
-
-ASAP — AI Site Agent Protocol. Version 0.1 Draft. canonical reference: github.com/asap-foundation/asap-protocol
-
+**Shahram Nematzadeh**
 
 ---
-## Authorship
 
-The ASAP protocol concept and canonical specification
-were proposed and authored by **Shahram Nematzadeh**.
+## 📄 License
 
----
-## License
+This specification is published for **public reference**.  
+Implementations are **permitted**.
 
-This specification is published for public reference. Implementations are permitted.  
-No entity may claim to be the canonical ASAP registry without attribution to this repository.
-
-
+> ⚠️ **No entity may claim to be the canonical ASAP registry without explicit attribution to this repository.**
