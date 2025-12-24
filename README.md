@@ -157,6 +157,23 @@ AI Platform → verifies signature → uses response
 
 ---
 
+## 🧩 Reference Implementation
+
+A public **reference implementation** of the ASAP protocol is available to support early adopters, pilot deployments, and validation of the specification.
+
+- **Repository:**  
+  https://github.com/asap-foundation/asap-reference-implementation
+
+- **Purpose:**
+  - Demonstrate a compliant ASAP Site Agent
+  - Provide concrete examples of intent handling and response signing
+  - Serve as a baseline for independent implementations
+
+> ⚠️ This implementation is provided for **reference and experimentation only**.  
+> It does **not** define the protocol and does **not** replace this repository as the **canonical specification**.
+
+---
+
 ## 📊 Status
 
 | Status | Details |
