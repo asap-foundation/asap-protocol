@@ -31,7 +31,27 @@ ASAP does not attempt to judge truth or correctness.
 It only verifies origin and authority.
 
 ---
+## What ASAP Is
 
+- An **intent-based communication protocol**
+- A **verification layer**, not a data platform
+- A way for websites to answer AI systems directly and authoritatively
+
+ASAP allows AI systems to verify responses instead of guessing them.
+
+---
+
+## What ASAP Is NOT
+
+- Not a crawler
+- Not a search engine
+- Not an API replacement
+- Not an AI model
+- Not a centralized data service
+
+ASAP complements existing approaches rather than replacing them.
+
+---
 ## Core Components
 
 ### 1. Site Agent
